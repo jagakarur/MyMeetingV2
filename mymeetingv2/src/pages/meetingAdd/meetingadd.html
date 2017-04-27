@@ -9,10 +9,25 @@
 
 <ion-content padding>
   <h3>Add meeting...</h3>
-<!--
+  <!--
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
 
   <button ion-button secondary menuToggle>Toggle Menu</button>-->
+  <form #meetingAddForm="ngForm" (ngSubmit)="addListItem()">
+
+    <ion-item>
+      <ion-label>Meeting name</ion-label>
+      <ion-input type="text" placeholder ="Meeting name" [(ngModel)]="meetingForm.meetingName" name="meetingName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Meeting number</ion-label>
+      <ion-textarea  placeholder ="Meeting number" [(ngModel)]="meetingForm.meetingNumber" name="meetingNumber"></ion-textarea>
+    </ion-item>
+    <button ion-button type="submit" block>Add meeting</button>
+
+
+  </form>
+
 </ion-content>
